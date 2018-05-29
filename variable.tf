@@ -5,5 +5,5 @@ variable "project-name" {
   default = "bakhovskuy-gcp-create"
 }
 variable "credential" {
-  default = "/home/mykola/.config/gcloud/bakhovskuy-gcp-create-555b4598cbcb.json"
+  default = "~/.config/gcloud/bakhovskuy-gcp-create-f3f41976e876.json"
 }

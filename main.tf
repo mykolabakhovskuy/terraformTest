@@ -13,7 +13,7 @@ resource "google_compute_instance" "default" {
  metadata {
     ssh-keys = "mykola:${file("~/.ssh/id_rsa.pub")}"
 }
- metadata_startup_script = "sudo apt install -y nginx"
+ metadata_startup_script = "sudo apt install -y nginx && sudo systemctl restart nginx"
 
   network_interface {
     network = "default"
@@ -25,3 +25,14 @@ resource "google_compute_instance" "default" {
 
 }
 }
+resource "google_compute_firewall" "default" {
+  name    = "test-firewall"
+  network = "default"
+
+  allow {
+    protocol = "tcp"
+    ports    = ["80", "8080", "1000-2000"]
+  }
+
+}
+

@@ -21,7 +21,7 @@ module "database"{
   network = "${module.vpc.name}"
   count = "1"
   image = "debian-cloud/debian-8"
-  path = "nginx.sh"
+  path = "../modules/scripts/default.sh"
 }
 
 

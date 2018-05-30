@@ -1,11 +1,11 @@
 resource "google_compute_instance" "default" {
-  count        = "2"
+  count        = "${var.count}"
   name         = "test-${count.index}"
   machine_type = "n1-standard-1"
   zone         = "europe-west1-b"
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-8"
+      image = "${var.image}"
     }
   }
   scratch_disk {
@@ -25,15 +25,3 @@ resource "google_compute_instance" "default" {
 
 }
 }
-resource "google_compute_firewall" "default" {
-  name    = "test-firewall"
-  network = "default"
-
-  allow {
-    protocol = "tcp"
-    ports    = ["80", "8080", "1000-2000"]
-  }
-
-}
-
-

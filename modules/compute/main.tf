@@ -1,6 +1,6 @@
 resource "google_compute_instance" "default" {
   count        = "${var.count}"
-  name         = "test-${count.index}"
+  name         = "${var.name}-${count.index}"
   machine_type = "n1-standard-1"
   zone         = "europe-west1-b"
   tags = ["test"]
@@ -14,7 +14,7 @@ resource "google_compute_instance" "default" {
  metadata {
     ssh-keys = "mykola:${file("~/.ssh/id_rsa.pub")}"
 }
- metadata_startup_script = "sudo apt install -y nginx && sudo systemctl restart nginx"
+# metadata_startup_script = "${file($vars.path)}"
 
   network_interface {
     network = "${var.network}"

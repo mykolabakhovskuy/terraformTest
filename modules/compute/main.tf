@@ -16,7 +16,7 @@ resource "google_compute_instance" "default" {
  metadata_startup_script = "sudo apt install -y nginx && sudo systemctl restart nginx"
 
   network_interface {
-    network = "default"
+    network = "${var.network}"
 
     access_config {
       // Ephemeral IP

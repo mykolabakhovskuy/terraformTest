@@ -1,4 +1,4 @@
-resource "google_compute_firewall" "default" {
+resource "google_compute_firewall" "test" {
   name    = "${var.name}"
   network = "${var.network}"
 

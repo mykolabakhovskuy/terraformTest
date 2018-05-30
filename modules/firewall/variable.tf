@@ -6,5 +6,4 @@ type = "list"
 variable name{
 }
 variable network{
-default = "default"
 }

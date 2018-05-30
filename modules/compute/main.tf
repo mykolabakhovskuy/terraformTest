@@ -14,7 +14,7 @@ resource "google_compute_instance" "default" {
  metadata {
     ssh-keys = "mykola:${file("~/.ssh/id_rsa.pub")}"
 }
-# metadata_startup_script = "${file($vars.path)}"
+ metadata_startup_script = "${file("${var.path}")}"
 
   network_interface {
     network = "${var.network}"
@@ -25,7 +25,9 @@ resource "google_compute_instance" "default" {
   
 
 }
+
 }
+
 output "instances"{
   value = "var.name"
 }

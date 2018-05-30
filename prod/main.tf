@@ -13,7 +13,7 @@ module "webservers"{
   network = "${module.vpc.name}"
   count = "2"
   image = "debian-cloud/debian-8"
-  path = "nginx.sh"
+  path = "../modules/scripts/nginx.sh"
 }
 module "database"{
   source = "../modules/compute/"
@@ -32,7 +32,7 @@ module "database"{
 #  service_port = "80"
 #  target_tags  = ["test"] 
 #}
-module "sorage"{
+module "storage"{
   source = "../modules/storage"
   name  = "bahovskuystoragegcp"
   location = "EU"

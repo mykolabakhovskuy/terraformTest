@@ -25,7 +25,11 @@ module "database"{
   path = "../modules/scripts/default.sh"
 }
 module "loadbalancer"{
-  instances = "module.webserver.name"
+  instances = [
+    "europe-west1-b/webserver-1",
+    "europe-west1-b/webserver-0",
+  ]
+
   project = "bakhovskuy-gcp-create"
   source = "../modules/loadbalancer"
   region       = "europe-west1"

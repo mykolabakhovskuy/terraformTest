@@ -3,6 +3,7 @@ variable project {
   default     = ""
 }
 variable instances {
+type = "list"
 }
 variable region {
   description = "Region for cloud resources."

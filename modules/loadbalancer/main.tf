@@ -13,11 +13,11 @@ resource "google_compute_target_pool" "default"
   name             = "${var.name}"
   project          = "${var.project}"
   region           = "${var.region}"
-#instances         = ["${formatlist("%s/%s/%s", webserver-1, )}"]
-instances = [
-    "europe-west1-b/webserver-1",
-    "europe-west1-b/webserver-0",
-  ]
+  instances = "${var.instances}"
+  #instances = [
+  #  "europe-west1-b/webserver-1",
+  #  "europe-west1-b/webserver-0",
+  #]
   health_checks = [
     "${google_compute_http_health_check.default.name}",
   ]

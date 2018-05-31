@@ -14,10 +14,6 @@ resource "google_compute_target_pool" "default"
   project          = "${var.project}"
   region           = "${var.region}"
   instances = "${var.instances}"
-  #instances = [
-  #  "europe-west1-b/webserver-1",
-  #  "europe-west1-b/webserver-0",
-  #]
   health_checks = [
     "${google_compute_http_health_check.default.name}",
   ]

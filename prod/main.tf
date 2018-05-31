@@ -5,7 +5,7 @@ module "vpc"{
   namefirewall = "${module.vpc.name}firewall"
   name = "test"
   protocol = "tcp"
-  ports  = [80,8080] 
+  ports  = [22,80,8080,3306] 
 }
 
 module "webservers"{
@@ -22,7 +22,7 @@ module "database"{
   network = "${module.vpc.name}"
   count = "1"
   image = "debian-cloud/debian-8"
-  path = "../modules/scripts/default.sh"
+  path = "../modules/scripts/mysql.sh"
 }
 module "loadbalancer"{
   instances = [

@@ -23,15 +23,15 @@ module "database"{
   image = "debian-cloud/debian-8"
   path = "../modules/scripts/default.sh"
 }
-
-
-#module "loadbalancer"{
-#  source = "../modules/loadbalancer"
-#  region       = "europe-west1"
-#  name         = "test-lb"
-#  service_port = "80"
-#  target_tags  = ["test"] 
-#}
+module "loadbalancer"{
+  instances = "module.webserver.name"
+  project = "bakhovskuy-gcp-create"
+  source = "../modules/loadbalancer"
+  region       = "europe-west1"
+  name         = "test-lb"
+  service_port = "80"
+  target_tags  = ["test"] 
+}
 module "storage"{
   source = "../modules/storage"
   name  = "bahovskuystoragegcp"

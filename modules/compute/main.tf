@@ -28,6 +28,13 @@ resource "google_compute_instance" "default" {
 
 }
 
-output "instances"{
-  value = "var.name"
+#output "instances"{
+#  value = "var.name"
+#}
+output "zones" {
+    value = ["${google_compute_instance.default.*.zone}"]
+}
+
+output "names" {
+    value = ["${google_compute_instance.default.*.name}"]
 }

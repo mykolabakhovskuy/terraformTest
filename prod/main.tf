@@ -2,7 +2,8 @@ module "vpc"{
   source = "../modules/vpc/" 
   name = "test"
   network = "${module.vpc.name}"
-  name = "test-firewall"
+  namefirewall = "${module.vpc.name}firewall"
+  name = "test"
   protocol = "tcp"
   ports  = [80,8080] 
 }

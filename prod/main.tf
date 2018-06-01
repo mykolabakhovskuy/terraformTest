@@ -15,6 +15,7 @@ module "webservers"{
   count = "2"
   image = "debian-cloud/debian-8"
   path = "../modules/scripts/nginx.sh"
+  tags = ["webserver"]
 }
 module "database"{
   source = "../modules/compute/"
@@ -23,6 +24,7 @@ module "database"{
   count = "1"
   image = "debian-cloud/debian-8"
   path = "../modules/scripts/mysql.sh"
+  tags = ["database"]
 }
 module "loadbalancer"{
   instances = [

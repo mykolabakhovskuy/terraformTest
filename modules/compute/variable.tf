@@ -8,3 +8,6 @@ variable "path"{
   default = "../modules/scripts/default.sh"
 }
 variable "name"{}
+variable "tags"{
+type = "list"
+}

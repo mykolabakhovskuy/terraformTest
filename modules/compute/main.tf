@@ -3,7 +3,7 @@ resource "google_compute_instance" "default" {
   name         = "${var.name}-${count.index}"
   machine_type = "n1-standard-1"
   zone         = "europe-west1-b"
-  tags = ["test"]
+  tags = "${var.tags}"
   boot_disk {
     initialize_params {
       image = "${var.image}"

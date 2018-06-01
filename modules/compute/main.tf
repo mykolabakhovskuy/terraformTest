@@ -2,7 +2,7 @@ resource "google_compute_instance" "default" {
   count        = "${var.count}"
   name         = "${var.name}-${count.index}"
   machine_type = "n1-standard-1"
-  zone         = "europe-west1-b"
+  zone         = "${var.zone}"
   tags = "${var.tags}"
   boot_disk {
     initialize_params {
@@ -28,13 +28,10 @@ resource "google_compute_instance" "default" {
 
 }
 
-#output "instances"{
-#  value = "var.name"
-#}
 output "zones" {
     value = ["${google_compute_instance.default.*.zone}"]
 }
 
 output "names" {
-    value = ["${google_compute_instance.default.*.name}"]
+    value = "${google_compute_instance.default.*.self_link}"
 }

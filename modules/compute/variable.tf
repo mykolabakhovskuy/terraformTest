@@ -11,3 +11,4 @@ variable "name"{}
 variable "tags"{
 type = "list"
 }
+variable "zone"{}

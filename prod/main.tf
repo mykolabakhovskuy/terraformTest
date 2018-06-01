@@ -5,7 +5,7 @@ module "vpc"{
   namefirewall = "${module.vpc.name}firewall"
   name = "test"
   protocol = "tcp"
-  ports  = [22,80,8080,3306] 
+  ports  = [22,80,8080,3306]
 }
 
 module "webservers"{
@@ -16,6 +16,7 @@ module "webservers"{
   image = "debian-cloud/debian-8"
   path = "../modules/scripts/nginx.sh"
   tags = ["webserver"]
+  zone = "europe-west1-b"
 }
 module "database"{
   source = "../modules/compute/"
@@ -25,13 +26,10 @@ module "database"{
   image = "debian-cloud/debian-8"
   path = "../modules/scripts/mysql.sh"
   tags = ["database"]
+  zone = "europe-west1-b"
 }
 module "loadbalancer"{
-  instances = [
-    "europe-west1-b/webserver-1",
-    "europe-west1-b/webserver-0",
-  ]
-
+  instances = "${module.webservers.names}"
   project = "bakhovskuy-gcp-create"
   source = "../modules/loadbalancer"
   region       = "europe-west1"

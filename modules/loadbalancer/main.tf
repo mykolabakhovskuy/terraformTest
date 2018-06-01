@@ -13,7 +13,7 @@ resource "google_compute_target_pool" "default"
   name             = "${var.name}"
   project          = "${var.project}"
   region           = "${var.region}"
-  instances = "${var.instances}"
+  instances = ["${var.instances}",]
   health_checks = [
     "${google_compute_http_health_check.default.name}",
   ]

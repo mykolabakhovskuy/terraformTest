@@ -10,8 +10,10 @@ resource "google_compute_instance" "default" {
     }
   }
  metadata {
+    // Add ssh keys to compute engine account
     ssh-keys = "mykola:${file("${var.ssh}")}"
 }
+   // Startup scripts 
  metadata_startup_script = "${file("${var.path}")}"
 
   network_interface {

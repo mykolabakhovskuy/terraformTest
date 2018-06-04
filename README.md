@@ -17,5 +17,5 @@ Terraform test project for gcp pre prod labs.
  * Two google compute instances for web servers 
  * One for databases
  * VPC network 
- * Firewall rules for ports 22,80,8080,3306
+ * Firewall allow rule for ports 22,80,8080,3306
  * HTTP Load Balancer

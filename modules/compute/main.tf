@@ -20,6 +20,7 @@ resource "google_compute_instance" "default" {
     network = "${var.network}"
 
     access_config {
+      // Create External ip for instances 
       //Add External IP
     }
   }

@@ -6,6 +6,16 @@ Terraform test project for practice.
  * GCP account
  * Terraform version 0.11.7 or higher
 
+# To use :
+ * Download Terraform
+ * Creating Google Cloud service account for terraform
+ * Change credential to Google Cloud in /prod/variables.tf
+ * Use command
+  ```sh
+ terraform init
+  ```
+  to download dependensy
+
 # In this project creates :
  * Two google compute instances for web servers 
  * One for databases

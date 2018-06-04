@@ -20,6 +20,13 @@ resource "google_compute_instance" "default" {
     access_config {
       //Add External IP
     }
+<<<<<<< HEAD
   }
+=======
+  
+
+}
+
+>>>>>>> f76329ded251049027a9fa4155aea31ff5e787d3
 }
 

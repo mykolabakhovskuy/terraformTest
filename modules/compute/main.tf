@@ -9,8 +9,6 @@ resource "google_compute_instance" "default" {
       image = "${var.image}"
     }
   }
-  scratch_disk {
-  }
  metadata {
     ssh-keys = "mykola:${file("~/.ssh/id_rsa.pub")}"
 }
@@ -20,7 +18,7 @@ resource "google_compute_instance" "default" {
     network = "${var.network}"
 
     access_config {
-      // Ephemeral IP
+      //Add External IP
     }
   
 

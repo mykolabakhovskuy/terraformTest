@@ -34,7 +34,7 @@ module "database"{
 }
 // create Exteran load balancer for two webserver instances 
 module "loadbalancer"{
-  instances = "${module.webservers.names}"
+  instances = "${module.webservers.url}"
   project = "bakhovskuy-gcp-create"
   source = "../modules/loadbalancer"
   region       = "${var.region}"

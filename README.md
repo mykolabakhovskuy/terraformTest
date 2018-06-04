@@ -10,11 +10,8 @@ Terraform test project for practice.
  * Download Terraform
  * Creating Google Cloud service account for terraform
  * Change credential to Google Cloud in /prod/variables.tf
- * Use command
-  ```sh
- terraform init
-  ```
-  to download dependensy
+ * Use command ```"terraform init"``` to download dependensy
+ * Use command ```"terraform apply"``` to build infrastructure in cloud  
 
 # In this project creates :
  * Two google compute instances for web servers 

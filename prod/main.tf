@@ -1,13 +1,15 @@
+// create default vpc network
 module "vpc"{
   source = "../modules/vpc/" 
   name = "test"
   network = "${module.vpc.name}"
+// create firewall rules
   namefirewall = "${module.vpc.name}firewall"
   name = "test"
   protocol = "tcp"
   ports  = [22,80,8080,3306]
 }
-
+// create two compute instances for webservers
 module "webservers"{
   source = "../modules/compute/"
   name   = "webserver"
@@ -20,6 +22,7 @@ module "webservers"{
   ssh = "${var.ssh}"
 }
 module "database"{
+// create one compute instances for database
   source = "../modules/compute/"
   name   = "database"
   network = "${module.vpc.name}"
@@ -30,6 +33,7 @@ module "database"{
   zone = "europe-west1-b"
   ssh  = "${var.ssh}"
 }
+// create Exteran load balancer for two webserver instances 
 module "loadbalancer"{
   instances = "${module.webservers.names}"
   project = "bakhovskuy-gcp-create"
@@ -39,6 +43,7 @@ module "loadbalancer"{
   service_port = "80"
   target_tags  = ["test"] 
 }
+// create Multi region cloud storage 
 module "storage"{
   source = "../modules/storage"
   name  = "bahovskuystoragegcp"

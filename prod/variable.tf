@@ -10,3 +10,6 @@ variable "credential" {
 variable "name" {
   default = "test"
 }
+variable "ssh"{
+  default = "~/.ssh/id_rsa.pub"
+}

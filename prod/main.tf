@@ -17,6 +17,7 @@ module "webservers"{
   path = "../modules/scripts/nginx.sh"
   tags = ["webserver"]
   zone = "europe-west1-b"
+  ssh = "${var.ssh}"
 }
 module "database"{
   source = "../modules/compute/"
@@ -27,6 +28,7 @@ module "database"{
   path = "../modules/scripts/mysql.sh"
   tags = ["database"]
   zone = "europe-west1-b"
+  ssh  = "${var.ssh}"
 }
 module "loadbalancer"{
   instances = "${module.webservers.names}"

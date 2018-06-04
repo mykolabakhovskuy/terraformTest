@@ -10,7 +10,7 @@ resource "google_compute_instance" "default" {
     }
   }
  metadata {
-    ssh-keys = "mykola:${file("~/.ssh/id_rsa.pub")}"
+    ssh-keys = "mykola:${file("${var.ssh}")}"
 }
  metadata_startup_script = "${file("${var.path}")}"
 
@@ -20,13 +20,7 @@ resource "google_compute_instance" "default" {
     access_config {
       //Add External IP
     }
-<<<<<<< HEAD
   }
-=======
-  
-
 }
 
->>>>>>> f76329ded251049027a9fa4155aea31ff5e787d3
-}
 

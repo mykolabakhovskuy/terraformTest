@@ -12,3 +12,6 @@ variable "tags"{
 type = "list"
 }
 variable "zone"{}
+variable "ssh"{
+description = "path to ssh keys"
+}

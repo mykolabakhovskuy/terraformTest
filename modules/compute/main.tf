@@ -20,16 +20,6 @@ resource "google_compute_instance" "default" {
     access_config {
       //Add External IP
     }
-  
-
+  }
 }
 
-}
-
-output "zones" {
-    value = ["${google_compute_instance.default.*.zone}"]
-}
-
-output "names" {
-    value = ["${google_compute_instance.default.*.self_link}"]
-}

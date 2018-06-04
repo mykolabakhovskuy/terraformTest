@@ -5,7 +5,7 @@ resource "google_compute_network" "test" {
 resource "google_compute_firewall" "test" {
   depends_on    = ["google_compute_network.test"]
   name    = "${var.namefirewall}"
-  network = "${var.network}"
+  network = "${google_compute_network.test.name}"
 
   allow {
     protocol = "${var.protocol}"

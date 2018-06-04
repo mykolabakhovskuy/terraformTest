@@ -5,6 +5,3 @@ resource "google_compute_instance_group" "default" {
   network     = "${var.network}"
   instances = ["${var.instances}",]
 }
-output "names" {
-  value = "${google_compute_instance_group.default.self_link}"
-}

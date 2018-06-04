@@ -1,6 +1,6 @@
-# Terraform test projec
+# Gcp-terraform-test
 
-Terraform test project for practice.
+Terraform test project for gcp pre prod labs.
 
 # For local development and testing you need
  * GCP account

@@ -9,7 +9,7 @@ Terraform test project for gcp pre prod.
 # To use :
  * Download Terraform
  * Creating Google Cloud service account for terraform
- * Change credential to Google Cloud in ``tr/prod/variables.tf``
+ * Change variable file in ``tr/prod/variables.tf``
  * Use command ```"$ terraform init"``` to download dependensy
  * Use command ```"$ terraform apply"``` to build infrastructure in cloud  
 

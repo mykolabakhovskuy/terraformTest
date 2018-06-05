@@ -1,6 +1,6 @@
 variable "name"{}
 variable "zone"{}
 variable "network"{}
-variable instances {
+variable "instances" {
   type = "list"
 }

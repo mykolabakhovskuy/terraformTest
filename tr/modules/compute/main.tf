@@ -11,8 +11,8 @@ resource "google_compute_instance" "default" {
   }
  metadata {
     // Add ssh keys to compute engine account
-    ssh-keys = "mykola:${file("${var.ssh}")}"
-}
+  ssh-keys = "mykola:${file("${var.ssh}")}"
+  } 
    // Startup scripts 
  metadata_startup_script = "${file("${var.path}")}"
 
@@ -21,7 +21,6 @@ resource "google_compute_instance" "default" {
 
     access_config {
       // Create External ip for instances 
-      //Add External IP
     }
   }
 }

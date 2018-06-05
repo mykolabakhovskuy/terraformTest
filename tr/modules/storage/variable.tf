@@ -1,9 +1,9 @@
 variable "name" {
-    description ="name of you backet"
+  description ="name of you backet"
 }
 variable "location"{
-    description = "Location of you backet"
+  description = "Location of you backet"
 }
 variable "storage_class"{
-    description = "Storage class"
+  description = "Storage class"
 }

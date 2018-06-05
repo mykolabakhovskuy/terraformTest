@@ -16,6 +16,7 @@ resource "google_compute_target_pool" "default"
   name             = "${var.name}"
   project          = "${var.project}"
   region           = "${var.region}"
+  // add instances to instances target pool
   instances = ["${var.instances}",]
   // Add health check to you target poll
   health_checks = [

@@ -15,3 +15,6 @@ variable "zone"{}
 variable "ssh"{
 description = "path to ssh keys"
 }
+variable "instances_type"{
+description = "instances type"
+}

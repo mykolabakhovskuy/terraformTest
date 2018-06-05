@@ -12,6 +12,7 @@ module "vpc"{
 module "webservers"{
   source = "../modules/compute/"
   name   = "webserver"
+  instances_type = "f1-micro"
   network = "${module.vpc.name}"
   count = "2"
   image = "debian-cloud/debian-8"
@@ -24,6 +25,7 @@ module "database"{
 // create one compute instances for database
   source = "../modules/compute/"
   name   = "database"
+  instances_type = "n1-standard-1"
   network = "${module.vpc.name}"
   count = "1"
   image = "debian-cloud/debian-8"

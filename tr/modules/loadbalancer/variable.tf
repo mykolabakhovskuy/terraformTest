@@ -3,6 +3,7 @@ variable project {
   default     = ""
 }
 variable instances {
+  description = "The instances names or url. Be careful list type"
   type = "list"
 }
 variable region {

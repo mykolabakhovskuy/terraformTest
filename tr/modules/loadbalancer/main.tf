@@ -1,9 +1,9 @@
 resource "google_compute_forwarding_rule" "default" {
+  // create External load balancer
   project               = "${var.project}"
   name                  = "${var.name}"
   // target use link to google_compute_target_pool 
   target                = "${google_compute_target_pool.default.self_link}"
-  // create External load balancer
   load_balancing_scheme = "EXTERNAL"
   port_range            = "${var.service_port}"
   region                = "${var.region}"
@@ -16,9 +16,8 @@ resource "google_compute_target_pool" "default"
   name          = "${var.name}"
   project       = "${var.project}"
   region        = "${var.region}"
-  // add instances to instances target pool
+  // add instances and health_checks to instances target pool
   instances     = ["${var.instances}",]
-  // Add health check to you target poll
   health_checks = [
     "${google_compute_http_health_check.default.name}",
   ]

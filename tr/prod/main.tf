@@ -1,7 +1,6 @@
 // create default vpc network
 module "vpc"{
   source       = "../modules/vpc/" 
-  name         = "test"
 // create firewall rules
   namefirewall = "${module.vpc.name}firewall"
   name         = "test"

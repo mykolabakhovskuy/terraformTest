@@ -1,7 +1,7 @@
 resource "google_compute_instance" "default" {
   count        = "${var.count}"
   name         = "${var.name}-${count.index}"
-  machine_type = "n1-standard-1"
+  machine_type = "${var.instance_type}"
   zone         = "${var.zone}"
   tags = "${var.tags}"
   boot_disk {

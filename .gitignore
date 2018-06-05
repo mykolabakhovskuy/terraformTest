@@ -1,0 +1,6 @@
+/.git
+/tr/*.swp
+/tr/prod/.*swp
+/tr/.terraform
+/tr/prod/.terraform
+/tr/prod/terraform.*

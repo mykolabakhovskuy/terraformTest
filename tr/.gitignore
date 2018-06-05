@@ -1,5 +1,0 @@
-*.swp
-/prod/.*swp
-/.terraform
-/prod/.terraform
-/prod/terraform.*

@@ -14,7 +14,7 @@ module "webservers"{
   instance_type = "f1-micro"
   network       = "${module.vpc.name}"
   count         = "2"
-  image         = "debian-cloud/debian-8"
+  image         = "centos-7"
   path          = "../modules/scripts/nginx.sh"
   tags          = ["webserver"]
   zone          = "${var.zone}"
@@ -27,7 +27,7 @@ module "database"{
   instance_type = "n1-standard-1"
   network       = "${module.vpc.name}"
   count         = "1"
-  image         = "debian-cloud/debian-8"
+  image         = "centos-7"
   path          = "../modules/scripts/mysql.sh"
   tags          = ["database"]
   zone          = "${var.zone}"

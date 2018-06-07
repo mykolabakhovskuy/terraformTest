@@ -7,7 +7,7 @@ variable "project-name" {
   default = "bakhovskuy-gcp-create"
 }
 variable "credential" {
-// credential to you gcp account
+// PATH to you google cloud account service acoonut JSON 
   default = "~/.config/gcloud/bakhovskuy-gcp-create-555b4598cbcb.json"
 }
 variable "ssh"{
